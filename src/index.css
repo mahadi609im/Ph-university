@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@plugin "daisyui";
+
+.toggle-btn {
+  @apply py-2 px-5 bg-purple-200 text-purple-700 font-medium text-lg;
+}
