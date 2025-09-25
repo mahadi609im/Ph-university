@@ -4,7 +4,7 @@ import Container from './Container';
 const ToggleBtns = ({ toggleBtnClick, setToggleBtnClick, btns }) => {
   return (
     <Container>
-      <div className="">
+      <div className="text-center md:text-right">
         {btns.map((btn, idx) => {
           return (
             <button
