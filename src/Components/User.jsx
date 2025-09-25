@@ -1,10 +1,23 @@
-const User = ({ user }) => {
+const User = ({ user, data, setData }) => {
   const { requestedBy, subject, description, userImg, priority, status } = user;
-  console.log(
-    status === 'Pending' ? status : status === 'Submitted' ? status : status
-  );
+
+  const handleData = () => {
+    const clickedData = data.find(el => el.ticketId === user.ticketId);
+    if (clickedData.status === 'Pending') {
+      clickedData.status = 'Submitted';
+    } else if (clickedData.status === 'Submitted') {
+      clickedData.status = 'Reviewed';
+    }
+
+    const filteredData = data.filter(el => el.ticketId !== user.ticketId);
+    setData([clickedData, ...filteredData]);
+  };
+
   return (
-    <div className="shadow-2xl border-2 border-gray-800 p-6 rounded-lg">
+    <div
+      onClick={handleData}
+      className="shadow-2xl border-2 border-gray-800 p-6 rounded-lg cursor-pointer"
+    >
       <div className="bg-slate-700 w-[80px] h-[80px] rounded-full">
         <img
           className="object-cover w-full h-full rounded-full"

@@ -6,7 +6,7 @@ const Navbar = () => {
     <div className="shadow-lg border-b-2 border-slate-900">
       <Container>
         <nav className="py-4 flex justify-between items-center">
-          <h1 className="md:text-xl text-sm font-bold">PH University</h1>
+          <h1 className="md:text-xl text-md font-bold">PH University</h1>
           <div className="md:flex hidden items-center gap-6">
             <a href="#" className="">
               Home
@@ -25,7 +25,7 @@ const Navbar = () => {
               + New Assignment
             </button>
           </div>
-          <div className="block md:hidden">
+          <div className="block md:hidden text-xl">
             <MdOutlineMenu />
           </div>
         </nav>
